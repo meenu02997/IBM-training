@@ -1,0 +1,88 @@
+Learning Objectives:
+
+	- Access modifiers
+	- Interfaces
+	- Exception handling
+	- File handling
+
+	Access specifiers:
+		- public
+		- private
+		- protected
+		- default
+
+	Access Modifiers:
+		- static
+		- final
+
+
+	Static members:
+
+	- Static variables and functions are created when the class file is loaded into JVM
+	- For all static variables or functions ---> Memory will be allocated only once
+	- The variables and functions belongs to the class only
+	- When there is one copy of the property that can be shared among all the instances of the class
+	- static properties are not inherited but they can be used by refering to the class name
+	- static initializer executes automatically to initiliaze the static variables
+	- static initializer executes as soon as the class file is loaded into JVM even before the main method
+	- Too many usage of static properties and methods are advisable as they will lead to bypass the Object Oriented features
+	- Inner classes can be created as static classes. The InnerClass can access the properties of the OuterClass and InnerClass 
+	without any reference to the OuterClass but the OuterClass need to refer the properties of inner class if want to use
+
+
+
+	final members:
+	
+	- Makes something constant
+	- When final keyword is applied on a class ---> The class becomes final class - Class can't be inherited
+	- When final keyword is applied on a method ---> The method becomes a final method and can't be overriden
+
+	final indetifiers (Constants):
+
+		- final identifiers (Constants) ---> Can't be reinitialized
+		- if constants are not assigned during creation then it is the reponsibility of the constructor to do it
+		- Even objects can be created as final		
+
+		- When final keyword is applied on a an identifier ---> The identifier becomes constant and the value can't be changed
+	
+	final methods:
+
+		- When a method is declared final, the method can't be overriden by the subclasses
+
+	final classes:
+		
+		- When a class is declared final that class can't be inherited
+
+================================================================================================================================================
+
+Interfaces:
+
+	- Contracts between parties
+	- It helps achieving 100% abstraction
+	- In Java multiple inheritance is not possible with classes (Even with abstract classes)
+	- Multiple inheritance is achieved with Interfaces in Java
+	- Only abstract methods are allowed in interfaces
+	- By default all the methods in interfaces are public and abstract
+	- Objects can't be created for interfaces
+	- When a class implementing the interfaces the class has to override all the abstract methods
+
+Creating interfaces:
+
+	- interface MyInterface1{}
+	- interface MyInterface2{}
+
+	class MyClass implements MyInterface1, MyInterface2{}
+	
+	interface ChildInterface extends ParentInterface{}
+
+
+
+
+		
+
+
+
+
+
+
+		

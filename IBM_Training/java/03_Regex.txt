@@ -1,0 +1,118 @@
+
+Learning Objectives 10th March 2022 - AN:
+
+	- Introduce regular expression
+	- Where the regular expressions are used in realtime
+	- The Java way of handling regex
+	- Character classes
+	- Builtin character classes
+	- Quantifiers
+	- Tokenizing (String, StringTokenizer and Pattern)
+	- Validate a phone number and an email id
+
+Regular expressions:
+
+	- Can be used in Java script, Python, Kotlin, Scala and Java
+	- Compiler design, TOC, Shell scripting
+	- It is a way of searching for a pattern in a String
+	
+Regular Expressions:
+Uses:
+	1. Form validation
+	2. Search operation (Pattern matching applications)
+
+EG. Phone numbers, emails are based on a pattern
+- A group of string objects based on a pattern - Regex can be used
+- Used in forms (Name, Mobile, email)
+
+
+Pattern:
+	- Is a Java class that helps to create regex in Java
+	- Compiled version of Regex
+ 	- Equivalent Java object form of the given regex
+
+Matcher:
+	- A java class that helps to find in the matching string
+	- Helps matching the pattern in the target string
+	- Matcher object can be created using the matcher() method using the pattern object
+	
+
+Methods of the Matcher:
+
+	- find() - Returns true if a match is found
+	- start() - Returns the start index of the match
+	- end() - Returns the end+1 index of the match
+	- group() - Returns the matched string
+
+Character classes:
+
+	- Efficient way of forming the regex pattern
+
+	[abc] or [a-c]	- a or b or c
+	[^abc] 		- except a or b or c
+	[a-z]  		- any lowercase alphabet 
+	[A-Z]  		- any uppercase alphabet
+	[a-zA-Z]	- any alphabet
+	[a-zA-Z0-9]	- any alpha numeric character
+	[^a-zA-Z0-9]	- Except alpha numeric symbol (Special characters)
+
+Predefined character classes:
+
+	\s		- Selects space
+	\S		- Selects everything except space
+	\d		- Selects digits [0-9]
+	\D		- Selects everything except digits
+	\w		- Selects all the alpha numerics [a-zA-Z0-9]
+	\W		- Selects except the alpha numerics [^a-zA-Z0-9]
+	.		- Selects alt alpha numberics and symbols
+
+
+	Eg. ".s"  ===> The first letter in the string can be anything and the second should be 's'
+
+
+Quantifiers:
+
+	- Used to define the number of occurrences
+	
+	x 		- Selects all the x in the matcher string (Exactly one x)
+	x+		- Atlest 1 x in the sequence and can have followed by any number of x
+	x*		- Any number of x including zero
+	x?		- Atmost 1 x (Zero or 1 x)
+	
+
+Spliting strings into tokens:
+
+	1. Pattern and Matcher classes
+	2. String class
+	3. StringTokenizer
+	
+
+Splitting the string into tokens:
+
+	Pattern p = Pattern.compile("pattern");
+	String[] str = p.split("Full String");
+
+Splitting using StringTokenizer:
+
+	StringTokenizer st = new StringTokenizer("www.stackroute.in", ".");
+
+		while (st.hasMoreTokens())
+			System.out.println(st.nextToken());
+
+
+
+- Validate phone number:
+	
+	
+- Validate email id
+	
+
+
+
+
+https://gitlab-nht.stackroute.in/ibm-nht-wave-21/regularexpressionsinjava.git
+https://gitlab-nht.stackroute.in/ibm-nht-wave-21/relationshipsinoops_abstractclasses.git
+https://gitlab-nht.stackroute.in/ibm-nht-wave-21/java-basics-oops.git
+
+
+ 

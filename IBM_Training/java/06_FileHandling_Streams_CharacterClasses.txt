@@ -1,0 +1,161 @@
+Learning Objectives 14th March 2022:
+
+	- File Handling
+	- Stream based file handling
+	- Character based file handling
+	- Serialization using stream classes
+	- Colletions API
+
+
+File handling:
+
+	- We have used the legacy File class to create folder, file, list the files in folder and deleted files and folders
+
+	- There are two types of classes that are used to work with the file (Reading and Writing operations)
+	
+	1. Stream based classes
+		- The File handling classes - read or write from or to the file in the form of bytes / stream
+
+	2. Character based classes
+		- The File handling classes - read or write from ot to the file in the form of characters
+
+	Stream Based classes:
+		- Any class that ends with the word "Stream" are stream based classes
+		- Reading operation: InputStream
+		- Writing operation: OutputStream
+
+		Reading operation:
+
+		- FileInputStream
+		- BufferedInputStream
+		- DataInputStream
+
+		Writing Operation: 
+		
+		- FileOutpurStream
+		- BufferedOutputStream
+		- DataOutputStream
+
+		Serialization:
+
+		- ObjectInputstream - To Serialize
+		- ObjectOutputStream - To Deserialize
+
+	Characer based classes:
+		
+		Reading operation:
+		- FileReader
+		- BufferedReader
+
+		Writing Operation:
+		- FileWriter
+		- BufferedWriter
+
+
+Reading operation:
+
+		- FileInputStream:
+			- This will read data from the disk file byte by byte
+
+			HDD (File in the hard disk)-----> Java Program
+			- Interacts with the HDD each time for each byte
+
+		- BufferedInputStream
+			- Buffer stands for a small memory area
+			- The interaction won't happen byte by byte
+			- Instead a portion of data is grabbed in the buffer and will be read by the Java program
+			- Much efficient than FileInputStream
+			- Less no of contact with the HDD compared to FileInputStream
+
+		- DataInputStream
+			- Bigger buffer than BufferedInputStream
+			- Data can be brought as a whole and can be read by the Java application
+
+			test.txt:
+
+			Hello world
+
+			Step 1 - Open the file with FileInputStream:
+			
+			FileInputStream fis = new FileInputStream("c://users//asus pc//desktop//test.txt");
+
+			//fis.read(); ----> This will read from the file character by character
+
+			int ch;
+			
+			Step 2:
+
+			while((ch=fis.read())!=-1){ // This loop will executed until the end of file (-1) is reached
+				System.out.print((char)ch);	
+			}
+			
+			
+			Hello World
+
+
+			To read the content of the file using byte array.
+
+			Step 1:
+
+			FileInputStream fis = new FileInputStream("c://users//asus pc//desktop//test.txt");
+
+
+			Step 2:
+			
+			Create a byte array
+
+			byte b[] = new byte[100];
+
+			Step 3: // Reading the file and storing into the byte array
+
+			fis.read(b);
+
+			sysout(b);  ===> Print hashcode
+
+			sysout(new String(b));  ===> Converts the byte array into a string and prints it
+	
+
+
+	OutputStream:
+
+		- FileOutputStream
+			- Will interact with the HDD (File) for writing each byte to the file
+			- Inefficient compared to Buffered and Dataoutput Streams
+
+		- BufferedOutputStream
+			- Bigger than FileOutputStream
+			- Uses a small buffer to store the data to be written to the file
+			- Faster than FileOutputStream
+			
+
+		- DataOutputStream
+			- Bigger thanb BufferedOutputStream
+			- Reads the entire file and stores into a big buffer and can read by the java program
+
+
+
+	Character based classes:
+		
+		Reading operation:
+		- FileReader
+		- BufferedReader
+
+		Writing Operation:
+		- FileWriter
+		- BufferedWriter
+
+	- For all the character based reader classes the parent class will be Reader
+	- For all the character based writer classes the parent class will be Writer
+	- In the Stream based classes the data will be read in the form of bytes
+	- The conversion was done by the programmer
+
+	- In the character based classes the data will be read by the classes in the form of bytes
+	- But the conversion will also be done by the class itself
+	- When getting the data these classes returns the data in the form of character sequence
+
+
+
+
+
+
+	

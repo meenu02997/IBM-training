@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Responsive website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+  background-image: url('https://photos.smugmug.com/Temples/Brigham-City-Temple/i-n64mP6v/0/2fe5681e/L/BPD_8994s-L.jpg');
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+    
+<header>
+  <h2>City of peace</h2>
+  
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+      
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<section>
+  
+  <article>
+    <h1>Dwarka</h1>
+    <p>An ancient and prosperous city believed to have been the capital of Lord Krishna's kingdom,
+         Dwarka is an important pilgrimage centre for Hindus from all over the world. It is located 
+         on the western coast of Gujarat, on the banks of River Gomti.Also known as Darukavana in 
+         the Shiv Purana, Nageshwar Jyotirlinga is about 20 minutes from the Dwarka city centre. 
+         The name Darukuvana originates from the Sanskrit word for deodar forests.</p>
+    <img src="https://wallpapercave.com/wp/wp7029749.jpg" style="width:100%" height="345">
+
+    <h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Ziba</td>
+    <td>88676576 </td>
+    <td>ria</td>
+  </tr>
+  <tr>
+    <td>nikki/td>
+    <td>655689090</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst </td>
+    <td>454534345353</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>65434534453</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>ruhi</td>
+    <td>9978686856</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>zoya</td>
+    <td>xxxxxxxxxxx</td>
+    <td>Italy</td>
+  </tr>
+</table>
+  </article>
+</section>
+
+<footer>
+  <p>This web page is a part of a demonstration of fluid web design made by Meenu Singh. Resize the browser window to see the content respond to the resizing</p>
+</footer>
+
+</body>
+</html>
+

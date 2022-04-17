@@ -1,0 +1,117 @@
+Learning Objectives 14th March 2022 - AN:
+
+	- The basics of collection framework
+	- Collection vs collection API vs Collections
+	- List, Set and Map and their implementations
+	- ArrayList vs LinkedList
+	- The problems when adding user defined objects into collection
+	- Comparable and Comparator interfaces
+
+
+collection api introduction:
+
+	- It is an API built to group similar or dissimilar objects together into one single object
+	Array: Collection of similar objects, Fixed size (Non resizable, static DS)
+		- Array with 5 boxes ---> int a[] = new int[5]; ---> 0 to n-1 -- 4
+	- The collection api offers vareity of dynamic data structure
+	- The appropriate methods can be used to perform operations on the diff Data Structures
+
+
+List:
+
+	- Are using indexes for storing numbers to the list
+	- Allows duplicate values to the list
+
+	Types:
+		- ArrayList 
+
+			---> Array implementation of the list
+			---> Indexing
+			---> Efficient when new values are added to the end of the list
+			---> When values are added to the start of the list the indexes needs to be moved
+
+
+		- LinkedList
+			
+			---> Implemented by logically connected nodes
+			---> Slower than ArrayList if values are added to the "end of the list"
+			---> But consistent on the speed whereever the values are added
+			
+
+		- Vector
+			
+			---> Is a threadsafe list implementation			
+
+Set:
+
+	- Are not using indexes for storing numbers to the Set
+	- Doesn't allow duplicate values to the set
+
+	- Having three implementations
+		- HashSet
+			---> Doesn't follow any order
+			---> The fastest set among all the sets
+
+		- LinkedHashSet
+			---> Folows the user defined order
+			---> Consistent
+	
+		- TreeSet
+			---> Has implemented SortedSet <Interface>
+			---> Follows natural ordering
+			---> Can be used only if the set items are of same type
+
+
+hashCode():
+
+	- Is called to assign hashcode to a newly created object
+	- Called only once per object
+	- Assigns hashCode for all the objects in Java
+	- If not implemented by a particular class, then to assign hashcode for that class the hashCode method of the Object class will be called
+
+equals():
+	
+	- Used to compare objects of same type
+	- If not implemented then the equals method of the Object class will be called to compare the objects
+
+
+Note. When objects are added into a set then automatically the equals method is called to compare if the objects are equal or not. If 
+the objects are equal then the equals() will return true so set set will not add the secodn item into it.
+
+
+
+[Student [sid=123, sName=Varun], 
+Student [sid=13, sName=Aditya], 
+Student [sid=23, sName=Krishna], 
+Student [sid=1023, sName=Bala], 
+Student [sid=123, sName=Varun]]
+
+
+[sets.Student@71dac704, 
+sets.Student@2d363fb3, 
+sets.Student@7d6f77cc, 
+sets.Student@5aaa6d82, 
+sets.Student@73a28541]
+
+
+[Student [sid=123, sName=Varun], 
+Student [sid=13, sName=Aditya], 
+Student [sid=23, sName=Krishna], 
+Student [sid=1023, sName=Bala]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,174 @@
+Docker:
+
+What is Docker?
+Virtual Machines vs Containers
+Docker Architecture
+Installing Docker
+Development workflow
+
+	
+What is Docker?
+
+	- Git solves the version controlling problem - Code repo ---> Push, fork, clone, pull, merge
+		- Managing the different version of the project
+		- Sharing the repo with the diversed team
+
+	- Docker solves - "It works fine in my machine" 
+		- Versions
+		- Operating System
+		- Dependencies
+		- Environment
+	- Docker provides images with preconfigured setup
+
+ - Platform form building, running and shipping applications
+ - Makes sure that your apps running in all the platforms/machines
+ - Solves the platform differences
+ - Files missing problem
+ - Dockers takes care of downloading dependencies
+ - Helps run apps with different settings on the same machine
+ - Runs the apps in a safe environment called containers
+ - The unused dependencies and environment can be easily removed
+
+Container:
+  - Isolated environment for running apps
+
+VMs are not containers:
+
+- VM - Hypervisors (VMWare, Virtual box)
+- VM need full copy of the OS
+- Slow 
+- Consumes CPU,RAM and Disk
+- No of VMs are limited
+
+Advantages:
+
+	- Able to experience different OS
+	- Ensure security (Pentesters, Ethical hackers etc...)
+	- VM has hacked by a hacker ---> Shutting down the VM and restarting will help to recover everything
+
+Containers:
+
+- Allows multiple apps in isolation
+- Light weight
+- Uses the OS of the host
+- Fast
+- Loads quickly
+- Less hardware consumption
+
+Architecture:
+
+- Client server architecture - Docker client and Docker server (Docker desktop)
+- Using REST API
+- Server (Called Docker Engine)
+- Containers shares Kernel of the OS (Heart/core of the OS)
+- Linux kernel ===> Windows 10
+- Containers are OS specific
+- Windows OS supports both windows and linux containers
+- Docker on Mac can uses light weight linux VM (Because MAC doesn't have linux kernel) ---> But docker needs linux kernel
+
+
+To Install Docker:
+
+	- https://docs.microsoft.com/en-us/windows/wsl/install-manual
+	- Download the latest Linux Kernel for windows
+	- Install as administrator
+	- Goto Docker site and download docker for windows
+	- Install docker in pc
+
+
+Steps:
+
+	- Create the application folder and all the required app files in it
+	- The Dockerfile needs to be added to the application folder 
+	- After build the docker image will be created
+	- The Docker image will contain all that is needed to execute a docker application
+
+	Container is a process with all the components needed
+	The app can be pushed to the docker hub and can be downloaded and used by another machine
+	Docker hub is a registry for docker images
+
+
+To Create a docker image:
+ - DockerFile need to be added
+
+Example Docker script:
+	FROM node:alpine
+	COPY . /src
+	WORKDIR /src
+	CMD ["node", "index.js"]
+	CMD node index.js
+
+node index.js
+
+CMD vs ENTRYPOINT vs RUN
+
+ - Run the command:
+  docker build -t file-name .
+
+ - Here the . in the command says that the DockerFile is available in the current folder
+
+ - docker images / image ls displays all the available images in the docker
+ - docker run file-name ===> Will run the docker image
+
+----------------------------------------------------------------------
+
+Working with the Mongo db using docker container:
+
+ ===> docker run -d -p 27017:27017 localrepo:data/db --name mongoimagename mongo:latest   ---> this will return the container id
+ ===> docker exec -it mongo bash    ----> Helps to move to the bash inside the container
+ ===> mongo                         ----> Helps move inside the mongo shell and run mongo commands
+
+
+
+  
+-----------------------------------------------------------------------
+Pushing the docker images to docker hub:
+
+To push the docker image to the docker hub:
+
+- First need to login to docker from cmd: docker login
+
+To tag before pushing the image:
+
+- docker tag image-name:version docker-ac-name/image-name:version
+
+- One more image will be added to the docker images
+
+To push:
+- docker push docker-ac-name/image-name
+
+To pull:
+- docker pull docker-ac-name/image-name
+
+To check the running process:
+
+- docker ps 	===> Will show the currently running containers
+- docker ps -a 	===> Will show the currently running and exited containers
+
+If we want to use linux:
+
+FROM openjdk
+EXPOSE 8080
+ADD /target/spring-docker.jar /spring-docker.jar
+ENTRYPOINT ["java", "-jar", "/spring-docker.jar"]
+
+FROM mongo
+EXPOSE 27017
+ADD /target/spring-docker.jar /spring-docker.jar
+ENTRYPOINT ["java", "-jar", "/spring-docker.jar"]
+
+
+
+docker pull linux     ===> Will download ubuntu
+docker run -it linux  ===> Will download and run linux i not available locally
+
+docker run -p 8081:8080 file-name
+
+---> Use docker compose to make springboot rest to communicate with the Mongodb/mysql
+---> Build docker image after docker compose and publish your app in docker hub
+
+
+
+link: Mongo with spring
+
+=============================================

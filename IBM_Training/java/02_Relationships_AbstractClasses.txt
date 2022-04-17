@@ -1,0 +1,41 @@
+Learning Objectives 10th March 2022:
+
+	- Has a relation
+	- Is a relation
+	- Inhertance
+	- Abstract classes
+	- Access modifiers
+
+- In OOPS there will a certain relationship among classes:
+
+	
+Has A Relationship:
+
+	- When a class contains the object of another class
+	- There is no inheritance between the classes
+	- A class making use of another object
+	- Code redundancy can be avoided
+
+	Eg. Car and Engine
+
+
+Is a relationship:
+
+	- Parent and child relationship
+	- Achieved with the help of inheritance
+
+
+Abstract classes:
+
+	- Abstraction: Showing only the essential details of an object to the outside
+	- Helps achieving abstraction
+	- 0 to 100%
+	- Abstract classes contains abstract methods (Having license to have abstract methods)
+	- Abstract methods are partially implemented methods
+	- Abstract classes to be used as parent classes
+	- Objects can't be created for abstract classes	
+
+	abstract class MyAbstract{
+
+	}
+

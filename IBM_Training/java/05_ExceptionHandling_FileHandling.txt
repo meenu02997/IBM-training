@@ -1,0 +1,98 @@
+Learning Objectives 11th March 2022 - AN
+
+	- Exception handling
+	- File handling
+
+
+	There two children classes for Throwable:
+	
+		- Exception:
+
+			- Objects with some error information
+			- "Unexpection events" that can occur during the normal execution of a program
+			- The exceptions can be handled and continue with the normal flow
+			- If exceptions are unhandled then it will cease the program in the middle
+		
+
+			
+		- Error
+			- All the subclasses of the Error class in the hierarchy are errors
+			- If there is an error we can't handle it with our code
+
+
+	Two types of exceptions:
+	
+		1. Checked exceptions 
+
+			- Identified and thrown during the compile time
+			- Compiler will force to handle the checked exception
+
+		2. Unchecked exceptions
+			
+			- Identified and thrown during runtime only
+			- Programmer needs to sense and handle it properly
+			- If unhandled will cease the program in the middle
+
+
+To handle an exception in Java:
+
+	try{} 		===> The code that can throw any excpetion will be placed in the try block
+	catch{} 	===> The solution for the exception thrown will be placed in the catch bloack
+	finally{} 	===> The finally block executes for sure if there is any exception or not
+
+
+	try{
+		//Code to open the file
+		//Code to connect with the db
+	}
+	catch(FileNotFoundException e){
+		// What to do if the file doesn't exist
+	}
+	catch(SQLException){
+		// What to do if the db connection failed
+	}
+
+
+	try{
+	
+		//Code to connect with the db
+	}
+	catch(SQLException e){
+		// What to do if the DB not connected
+	}
+
+- If not willing to handle the exception, we can add the throws in t method signature
+- The exception can be thrown by a function by creating the appropriate exception object.
+
+	Eg. throw new FileNotFoundException();
+
+
+=============================================================================================================================
+
+
+File Handling:
+
+	- Accessing and manipulating the files in the hard disk from the java program is called file handling
+	- Legacy File class
+	- Stream based input and output classes
+	- Character based input and output classes
+
+
+Legacy File class:
+
+	- Not helpful for reading and writing from a file
+	- It helps controlling the file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

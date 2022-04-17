@@ -1,0 +1,111 @@
+Learning Objectives: 04th April 2022
+
+	- Basics of microservices
+	- Eureka Server - Discovery server 
+	- Application.properties file configuration
+	- Creating and configuring clients (Micro Services)   - Service discovery clients
+	- Creating and configuring the server (Eureka Server) - Service discovery server
+
+
+Monolithic architecture:
+
+Advantages:
+
+	- Monoliths are easier to develop since everything is in one place
+	- Horizontal scaling is possible
+	- Language/Technology is mostly same
+	- Hence same libraries can be used throughout the project
+	- Very suitable for smaller teams and projects with fixed/smaller budget
+	- No Network calls while calling different components
+	- Easier to maintain since the codebase is one unit
+	- Comparing MS, Monolithic architecture is less expensive
+
+Drawbacks:
+
+	- Language and technology can't be used for convenience
+	- Large singe code base
+	- Dependancy among modules 
+	- Tightly coupled architecture
+	- Making change in one module may interrup the working of other modules
+	- Backup and scaling requires much effort
+	- Requires overall knowledge on the entire architecture (Programmer)
+	
+
+SpringBoot Micro services:
+
+Advantages:
+
+	- Independent of technology
+	- Are small individual modules that can be executed to do a specific task
+	- Each service may have its own copy of the database
+	- Different DBs can be used in each services
+	- Several microservices can be combined together to perform a specific task - Service Discovery
+	- Every individual module will communicate with another module by exchanging data (RestTemplate - Bean). Data can be of plain text, object
+	- Will work in a distributed environment so there is no single point of failure
+	- Services are distributed across multiple pages
+	- Development can happen asynchronously
+	- Registering microservices is easier with the builtin tools
+	- Easier to scale, debug and understand the code
+
+
+Disadvantages:
+
+	- Large and seperated code base
+	- Makes maintainance little complex
+	- Since the communication among the services are through RPC/network calls, may take a little longer time for interaction among 
+	  services compared to Monolith
+	- Not suitable for smaller teams with limited budet and smaller projects.
+
+
+IRCTC:
+
+	RegistrationService --------> Own opy of database is available
+	LoginService
+	SearchService
+	BookingService
+	TicketService
+
+
+M1,M2,M3,M4, M5
+
+M1 ---- M2
+M3 ---- M1
+M4 ---- M5
+
+Eureka Server:
+
+	- Created by netflix
+	- To provide the service registry
+	- Acts as a service discovery server
+	- Lists all the services that are registered with it
+
+
+Steps:
+
+	- Create the student service  ----> Talks to its own database (h2)
+	- Create the teacher service  ----> Talks to its own database (Mysql)
+	- To create the service discovery client ===>
+		- Add the Eureka client dependency
+		- Add @EnableEurekaClient
+		- Configure the port number and server details in the application.properties file
+
+	- To create the server for service discovery ===>
+		- Add the EurekaServer dependency
+		- Add the @EnableEurekaServer annotation to the main class
+		- Configure the properties file:
+			- Set the server port number
+			- Set false being the client in the application.properties file
+
+
+Server config:
+
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+server.port=8761
+
+
+Client Config:
+
+server.port=8081
+eureka.client.service-url.defaultZone:http://localhost:8761/eureka
+spring.application.name=EmployeeService

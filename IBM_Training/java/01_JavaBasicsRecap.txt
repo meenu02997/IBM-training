@@ -1,0 +1,220 @@
+
+Learning Objectives 09th March 2022:
+
+	- Recap on Java basics
+	- Class, Objects and some other OOPS concepts
+	- Strings and Regex
+
+
+- The platform independance feature of JAVA is also called as WORA - Write Once Run Anywhere
+- WORA is achieved in Java with the help of JVM
+
+
+JDK - Java Development Kit
+JRE - Bundle of Java libs that helps to execute our Java program
+JVM - Virtual environment where the Java code executes
+
+
+Variables:
+
+	- Are temporary placeholders
+	- Values can be changed throughout the program
+
+Constants:
+
+	- Are fixed
+	- Can't be changed
+
+Data types:
+
+	- Are needed to create variables or constants
+	- To define the type of value that can be stored into the variable or constants
+	- Syntac for creating a variable:
+
+	public <data-type> variable_name;
+
+Numerical:
+
+	byte	- 1 byte	-> -128 to 127
+	short	- 2 bytes	-> -32768 to 32767
+	int	- 4 bytes	
+	long	- 8 bytes
+
+	float	- 4 bytes
+	double	- 8 bytes
+
+Textual:
+
+	char	- 2 bytes
+	String	- number of characters * 2
+
+Boolean:
+
+	boolean	- 1 bit		-> false and true
+
+byte	- Byte
+short	- Short
+
+
+int number1 = 10;
+final int number2 = 30;
+
+
+Operators:
+
+	- Arithmetic
+		+, -, *, /, %
+
+	- Relational
+		<, >, ==, <=, !=, >=	
+
+	- Logical
+		&&, ||, !	
+	
+	- Increment or decrement
+		pre increment:
+
+			int a = 10;
+			sysout(++a); ===> 11
+
+		Post increment:
+
+			int b = 10;
+			sysout(b++); ===> 10
+			sysout(b);   ===> 11
+
+
+Control structures:
+
+	int num = Input from the user;  123456789054
+
+	run a loop to add the sum of digits ===> display the sum of digits
+
+
+	1. Conditional statements
+		if, if..else, switch
+
+	2. Loops
+		while:
+			- Entry level condition checking
+			- Preferred when the total no of iterations are not known
+			
+		do..while:
+			- Exit level condition checking
+			- Preferred when the total no of iterations are not known
+			- The loop body is executed "at least" once regardless of the condition is true or false
+
+		for:
+			- Entry level condition checking
+			- Preferred when the total no of executions are known 
+
+
+Arrays:
+
+	- Are sequence of similar data items
+	- Strict data structure
+	- Fixed in sized
+	- Sequential in nature
+	- The elements of the array can be accessed using their index
+	- The index always starts with 0 and ends with n-1
+	- The elements of the array are accessed with their respective indexes
+	- If an index which is not part of the array is accessed --> ArrayIndexOutofBoundsException
+		
+
+	int[] arr = new int[5];
+
+
+========================================================================================
+
+Java OOPS:
+
+	- Is one of the popular programming paradigms (Methodology of writing programs)
+	- It helps the programmer to think and conceptualize the programs interms of objects
+	- Helps in code reusability
+	- Helps in realistic modeling
+	- Helps achive resilience to change
+	- Improved Security
+
+
+OOP Features:
+
+	- Class
+	- Objects
+	- Abstraction
+	- Encapsulation
+	- Inheritance
+	- Polymorphism
+
+
+	Class:
+		- Template (Bluprints) used to create objects
+		- Collection of datamembers and member functions
+		- User defined data types
+		- Syntax to create class in Java:
+		
+		class Student{}
+		
+	Objects:
+		- Instance of a class
+		- Has three important characteristics:
+
+			- Attributes/properties/variables
+			- Behavior / Methods
+			- Id (Hashcode)
+
+	   Contructor:
+		- Special member function - Used to initialize instance variables
+		- It invokes automatically when an object of a class is created
+		- The classname and constructor name must be same
+		- No return type specified for a constructor
+		- The default return type of a constructor is the object of the class
+		- Constructor can receive any number of arguments
+		- Having more than one constructor in a class is called constructor overloading
+
+	Abstraction:
+		- Process of showing only the essential details of an object
+
+	Encapsulation:
+		- Wrapping up of data and methods together into a single unit	
+
+	Inheritance (To achieve reusability):
+		- Deriving the variables and methods of one class into another class
+		- The class that shares the properties to another class is the parent/base/super class
+		- The class that derives the properties from the parent class is the child/sub/derived class
+
+	Polymorphism:
+		- The ability of an object to react differently based on the situation
+		Static polymorphism 
+			- Compile time polymorphism
+
+		Dynamic polymorphism
+			- Runtime polymorphism
+
+	- toString() ---> Helps printing the object instead of hashcode
+	- Getters are called ---> Accessors and Setters are called Mutators
+
+==========================================================================================================
+
+
+1. Create a class named Mentor with the properties mentorId, mentorName, salary, designation
+create a zero argument, all argument constructor, getters, setters methods and toString()
+
+2. From inside the Mainclass create three mentor objects and instantiate them with the help of constructors, 
+later change the properties of the each objects using the setter methods
+
+
+Steps to push the changes:
+
+Method 1:
+
+	- Go to gitlab remote and create a repo
+	- Press the clone button and get the https link for the repo
+	- Goto local pc ---> go to the exact folder where you need to clone the repo
+	- open the cmd prompt in that location
+	- git clone "repo url" ---> enter
+	- The remote repo will be cloned to local (A .git folder will be present)
+	- Add the files that you want into that cloned folder
+	- cd into the cloned repo (Where the files are added)
+	- git add .  (This will move the changes to the staging area)
+	- git commit -m "A proper commit message"  (This will move the changes from the staging area to the commit history)
+	- git push -u origin master   (This will push all the changes to the remote repo)
